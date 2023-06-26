@@ -52,3 +52,18 @@ body {
     background-color: grey;
   }
   
+  body label {
+    color: yellow;
+  }
+  .click-start-btn {  
+    cursor: pointer;
+    background-color: blue;
+    border-radius: 12px;
+    margin-left: 45%;
+    width: 100px;
+    color: wheat;
+  } 
+  .click-start-btn h5  {  
+
+    background-color: yellow;
+  } 

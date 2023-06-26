@@ -7,14 +7,17 @@ let gamePattern = [];
 let started = false;
 let level = 0;
 
-$(document).on('keydown', function(event){
+const handleStart = (event) => {
     if(!started){
         $('#level-title').text('Level ' + level )
         nextSequence()
         started = true
     }
-    
-})
+}
+$(document).on('keydown', handleStart)
+$('.click-start-btn').on('click', handleStart)
+
+
 
 $('.btn').on('click', function(){
     let userChosenColour = $(this).attr('id');
@@ -29,7 +32,6 @@ $('.btn').on('click', function(){
 
 function checkAnswer(currentLevel){
     if(gamePattern[currentLevel] === userClickedPattern[currentLevel]){
-        console.log('success')
 
         if( userClickedPattern.length === gamePattern.length ){
             setTimeout(()=> {
@@ -37,15 +39,15 @@ function checkAnswer(currentLevel){
             }, 1000)
         }
     } else {
-        let wrongAudio = 'wrong'
-        playSound(wrongAudio)
+         
+        playSound('wrong')
         
         $('h1').text('Game Over, Press Any Key to Restart')
         $('body').addClass('game-over')
         
         setTimeout(() => {
-            $('body').removeClass('game-over')            
-        },1000)
+            $('body').removeClass('game-over')           
+        },2000)
         startOver()
     }
 
@@ -54,8 +56,6 @@ function checkAnswer(currentLevel){
 function nextSequence(){
 
     userClickedPattern = [];
-    
-    console.log('2 ', userClickedPattern )
 
     level++
     $('#level-title').text('Level ' + level )
