@@ -2,7 +2,6 @@ body {
     text-align: center;
     background-color: #011F3F;
   }
-  
   #level-title {
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
@@ -54,16 +53,23 @@ body {
   
   body label {
     color: yellow;
+    font-family: 'Press Start 2P', cursive;
   }
-  .click-start-btn {  
-    cursor: pointer;
-    background-color: blue;
-    border-radius: 12px;
-    margin-left: 45%;
+  .click-start-btn {
+    display: inline;
     width: 100px;
-    color: wheat;
+    background-color: blue;
+    color: whitesmoke;
+    font-weight: bold;
+    border-radius: 12px ;
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  .click-start-btn:hover {  
+    border: 3px solid yellow;
   } 
-  .click-start-btn h5  {  
 
-    background-color: yellow;
-  } 
+  .display-none {
+    display: none;
+  }

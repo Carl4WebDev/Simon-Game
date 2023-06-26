@@ -7,13 +7,18 @@ let gamePattern = [];
 let started = false;
 let level = 0;
 
+
 const handleStart = (event) => {
     if(!started){
         $('#level-title').text('Level ' + level )
+        $('.click-start-btn').addClass('display-none')
+        $('label').addClass('display-none')
         nextSequence()
         started = true
+        
     }
 }
+
 $(document).on('keydown', handleStart)
 $('.click-start-btn').on('click', handleStart)
 
@@ -44,9 +49,11 @@ function checkAnswer(currentLevel){
         
         $('h1').text('Game Over, Press Any Key to Restart')
         $('body').addClass('game-over')
-        
+
+        $('.click-start-btn').removeClass('display-none')
+        $('label').removeClass('display-none')
         setTimeout(() => {
-            $('body').removeClass('game-over')           
+            $('body').removeClass('game-over')
         },2000)
         startOver()
     }
